@@ -4,7 +4,7 @@ class User {
         this.surname = surname;
     }
     createSimpleTask() {
-
+        console.log('simple Task'); // TODO console.log
     }
 }
 
@@ -15,7 +15,7 @@ class Student extends User {
     }
 
     createHomeTask() {
-
+        console.log('home Task'); // TODO console.log
     }
 }
 
@@ -26,6 +26,7 @@ class Developer extends Student {
     }
 
     createProjectTask() {
+        console.log('project Task'); // TODO console.log
     }
 }
 
