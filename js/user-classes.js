@@ -29,7 +29,3 @@ class Developer extends Student {
         console.log('project Task'); // TODO console.log
     }
 }
-
-const developer = new Developer('Вася', 'Пупкін');
-
-developer.createProjectTask();
