@@ -29,17 +29,20 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="surname" name="surname" placeholder="Surname">
+                                <input type="text" class="form-control" id="surname" name="surname"
+                                       placeholder="Surname">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="specialization" name="specialization" placeholder="Specialization">
+                                <input type="text" class="form-control" id="specialization" name="specialization"
+                                       placeholder="Specialization">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="job-title" name="job" placeholder="Job title">
+                                <input type="text" class="form-control" id="job-title" name="job"
+                                       placeholder="Job title">
                             </div>
                         </div>
                         <div class="col-12">
@@ -61,37 +64,94 @@
             <div class="col-lg-6">
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                           role="tab" aria-controls="nav-home" aria-selected="true">Simple task</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                           role="tab" aria-controls="nav-profile" aria-selected="false">Home task</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
+                           role="tab" aria-controls="nav-contact" aria-selected="false">Project task</a>
                     </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <div class="row mt-2">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                        <form id="simpleTask">
+                            <div class="row mt-2">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="title"
+                                               placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control"  name="status"
+                                               placeholder="Status">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button class="btn btn-primary" type="submit">Create task</button>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="status" name="status" placeholder="Status">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <textarea type="text" class="form-control" id="description" name="description" placeholder="Description here.."></textarea>
-                                </div>
-                            </div>
-
-                        </div>
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
+                        <form id="homeTask">
+                            <div class="row mt-2">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="title"
+                                               placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="status"
+                                               placeholder="Status">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <textarea type="text" class="form-control" name="description"
+                                                  placeholder="Description here.."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button class="btn btn-primary" type="submit">Create task</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-
+                        <form id="projectTask">
+                            <div class="row mt-2">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="title"
+                                               placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="status"
+                                               placeholder="Status">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input type="date" class="form-control" name="date">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <textarea type="text" class="form-control" name="description"
+                                                  placeholder="Description here.."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <button class="btn btn-primary" type="submit">Create task</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
