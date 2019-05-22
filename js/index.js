@@ -39,21 +39,6 @@ function createUser(data) {
 
 }
 
-// event on simple task
-const simpleForm = document.getElementById('simpleTask');
-simpleForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const data = {
-        title: e.target.elements.title.value,
-        status: e.target.elements.status.value,
-        type:'simple'
-    }
-
-    createTask(data)
-})
-
-
 function createTask(data) {
     let task;
     if(data.type === 'simple') {
@@ -75,4 +60,43 @@ function createTask(data) {
         }
     }
 }
-const simple = document.getElementById('simpleTask')
+// event on simple task
+const simpleForm = document.getElementById('simpleTask');
+simpleForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const data = {
+        title: e.target.elements.title.value,
+        status: e.target.elements.status.value,
+        type:'simple'
+    };
+
+    createTask(data);
+});
+
+// event on home task
+const homeForm = document.getElementById('homeTask');
+homeForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = {
+        title: e.target.elements.title.value,
+        status: e.target.elements.status.value,
+        description: e.target.elements.description.value,
+        type:'home'
+    };
+    createTask(data);
+});
+
+// event on home task
+const projectTask = document.getElementById('projectTask');
+projectTask.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = {
+        title: e.target.elements.title.value,
+        status: e.target.elements.status.value,
+        date: e.target.elements.date.value,
+        description: e.target.elements.description.value,
+        type:'project'
+    }
+    createTask(data);
+});
