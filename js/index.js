@@ -1,4 +1,4 @@
-
+const taskList = []
 //  add eventListener to submit form
 const createUserForm = document.querySelector('#userCreate');
 createUserForm.addEventListener('submit', function (e) {
@@ -58,7 +58,8 @@ function createTask(data) {
             alert('У вас немає прав на створення таску');
         }
     }
-    renderTask(task);
+    taskList.push(task)
+    renderTask(taskList);
 }
 // event on simple task
 const simpleForm = document.getElementById('simpleTask');
@@ -101,16 +102,24 @@ projectTask.addEventListener('submit', function (e) {
     createTask(data);
 });
 
-function renderTask(task) {
-    let tasks = '';
-
-console.log(task); // TODO console.log
-    // ${taskList[item].title}; status: ${taskList[item].status}
-    console.log(task); // TODO console.log
-    const li = document.createElement('li');
-         li.innerHTML = `<span>type: simple; type: <button class="btn btn-danger btn-sm float-right">del</button></span>`;
-
-    document.querySelector('.list-group').append(li)
-
+function renderTask(taskList) {
+    console.log(taskList); // TODO console.log
+    let tasks ='';
+    for (let item in taskList) {
+        console.log(taskList[item]); // TODO console.log
+        console.log(item); // TODO console.log
+        const li = `<li class="list-group-item">type: simple; type: ${taskList[item].title}; status: ${taskList[item].status}<button class="btn btn-danger btn-sm float-right">del</button></li>`
+        tasks = tasks + li;
+    }
+     document.querySelector('.list-group').innerHTML = tasks
 
 }
+
+document.querySelector('.list-group').addEventListener('click', function (e) {
+    if(e.target && e.target.nodeName == "BUTTON") {
+        // List item found!  Output the ID!
+        const delBlock = e.target;
+        delBlock.parentNode.remove()
+
+    }
+})
