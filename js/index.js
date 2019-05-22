@@ -36,24 +36,24 @@ function createUser(data) {
     } else {
          console.log('You chosen wrong user type'); // TODO console.log
     }
-
+    console.log(user); // TODO console.log
 }
 
 function createTask(data) {
     let task;
     if(data.type === 'simple') {
-         task = user.createSimpleTask(data.title, data.status);
+         task = user.createSimpleTask(data);
     }
     else if (data.type === 'home') {
         if (user.constructor.name === 'Student' || user.constructor.name === 'Developer') {
-            task = user.createHomeTask(data.title, data.status, data.description);
+            task = user.createHomeTask(data);
         } else {
             alert('У вас немає прав на створення таску');
         }
     }
     else if (data.type === 'project') {
         if (user.constructor.name === 'Developer') {
-            task = user.createProjectTask(data.title, data.status, data.description, data.date);
+            task = user.createProjectTask(data);
         } else {
             alert('У вас немає прав на створення таску');
         }
