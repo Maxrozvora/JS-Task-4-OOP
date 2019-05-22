@@ -58,7 +58,7 @@ function createTask(data) {
             alert('У вас немає прав на створення таску');
         }
     }
-    console.log(task); // TODO console.log
+    renderTask(task);
 }
 // event on simple task
 const simpleForm = document.getElementById('simpleTask');
@@ -100,3 +100,17 @@ projectTask.addEventListener('submit', function (e) {
     }
     createTask(data);
 });
+
+function renderTask(task) {
+    let tasks = '';
+
+console.log(task); // TODO console.log
+    // ${taskList[item].title}; status: ${taskList[item].status}
+    console.log(task); // TODO console.log
+    const li = document.createElement('li');
+         li.innerHTML = `<span>type: simple; type: <button class="btn btn-danger btn-sm float-right">del</button></span>`;
+
+    document.querySelector('.list-group').append(li)
+
+
+}
