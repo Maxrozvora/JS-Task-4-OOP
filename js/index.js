@@ -17,13 +17,14 @@ createUserForm.addEventListener('submit', function (e) {
         type
     };
 
-    console.log(data); // TODO console.log
     createUser(data);
-    
+
 });
 
+let user;
+
 function createUser(data) {
-    let user;
+
     if(data.type === 'User') {
         user = new User(data.name, data.surName);
     }
@@ -35,5 +36,43 @@ function createUser(data) {
     } else {
          console.log('You chosen wrong user type'); // TODO console.log
     }
-     console.log(user); // TODO console.log
+
 }
+
+// event on simple task
+const simpleForm = document.getElementById('simpleTask');
+simpleForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const data = {
+        title: e.target.elements.title.value,
+        status: e.target.elements.status.value,
+        type:'simple'
+    }
+
+    createTask(data)
+})
+
+
+function createTask(data) {
+    let task;
+    if(data.type === 'simple') {
+         task = user.createSimpleTask();
+    }
+    else if (data.type === 'home') {
+        user = new Student(data.name, data.surName, data.specialization);
+        if (user.constructor.name === 'Student' || user.constructor.name === 'Developer') {
+            task = user.createHomeTask();
+        } else {
+            alert('У вас немає прав на створення таску');
+        }
+    }
+    else if (data.type === 'project') {
+        if (user.constructor.name === 'Developer') {
+            task = user.createProjectTask();
+        } else {
+            alert('У вас немає прав на створення таску');
+        }
+    }
+}
+const simple = document.getElementById('simpleTask')
