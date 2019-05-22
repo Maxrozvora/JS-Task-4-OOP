@@ -4,7 +4,7 @@ class User {
         this.surname = surname;
     }
     createSimpleTask(data) {
-        return new SimpleTask(data.title, data.status)
+        return new SimpleTask(data.title, data.status);
     }
 }
 
@@ -14,8 +14,8 @@ class Student extends User {
         this.specialization = specialization;
     }
 
-    createHomeTask() {
-        console.log('home Task'); // TODO console.log
+    createHomeTask(data) {
+        return new HomeTask(data.title, data.status, data.description);
     }
 }
 
@@ -25,8 +25,8 @@ class Developer extends Student {
         this.jobTitle = jobTitle;
     }
 
-    createProjectTask() {
-        console.log('project Task'); // TODO console.log
+    createProjectTask(data) {
+        return new ProjectTask(data.title, data.status, data.description, data.date);
     }
 }
 

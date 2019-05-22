@@ -42,23 +42,23 @@ function createUser(data) {
 function createTask(data) {
     let task;
     if(data.type === 'simple') {
-         task = user.createSimpleTask();
+         task = user.createSimpleTask(data.title, data.status);
     }
     else if (data.type === 'home') {
-        user = new Student(data.name, data.surName, data.specialization);
         if (user.constructor.name === 'Student' || user.constructor.name === 'Developer') {
-            task = user.createHomeTask();
+            task = user.createHomeTask(data.title, data.status, data.description);
         } else {
             alert('У вас немає прав на створення таску');
         }
     }
     else if (data.type === 'project') {
         if (user.constructor.name === 'Developer') {
-            task = user.createProjectTask();
+            task = user.createProjectTask(data.title, data.status, data.description, data.date);
         } else {
             alert('У вас немає прав на створення таску');
         }
     }
+    console.log(task); // TODO console.log
 }
 // event on simple task
 const simpleForm = document.getElementById('simpleTask');
