@@ -1,4 +1,4 @@
-const taskList = []
+// const taskList = []
 //  add eventListener to submit form
 const createUserForm = document.querySelector('#userCreate');
 createUserForm.addEventListener('submit', function (e) {
@@ -58,8 +58,7 @@ function createTask(data) {
             alert('У вас немає прав на створення таску');
         }
     }
-    taskList.push(task)
-    renderTask(taskList);
+    renderTask(task);
 }
 // event on simple task
 const simpleForm = document.getElementById('simpleTask');
@@ -102,16 +101,19 @@ projectTask.addEventListener('submit', function (e) {
     createTask(data);
 });
 
-function renderTask(taskList) {
-    console.log(taskList); // TODO console.log
-    let tasks ='';
-    for (let item in taskList) {
-        console.log(taskList[item]); // TODO console.log
-        console.log(item); // TODO console.log
-        const li = `<li class="list-group-item">type: simple; type: ${taskList[item].title}; status: ${taskList[item].status}<button class="btn btn-danger btn-sm float-right">del</button></li>`
-        tasks = tasks + li;
+function renderTask(task) {
+    const li = document.createElement('li');
+    li.classList.add('list-group-item');
+    let info = `type: simple; type: ${task.title}; status: ${task.status}`;
+    if(task.constructor.name === 'HomeTask') {
+        info = `type: home; type: ${task.title}; status: ${task.status}; description: ${task.description}`
+    } else if (task.constructor.name === 'ProjectTask') {
+        info = `type: project; type: ${task.title}; status: ${task.status}; description: ${task.description}; deadline: ${task.deadline}`
     }
-     document.querySelector('.list-group').innerHTML = tasks
+
+    li.innerHTML = `${info}<button class="btn btn-danger btn-sm float-right">del</button>`;
+
+     document.querySelector('.list-group').append(li)
 
 }
 
